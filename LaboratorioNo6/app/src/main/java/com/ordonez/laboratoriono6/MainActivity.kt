@@ -217,6 +217,59 @@ fun InformationBox(title: String, description: String) {
     }
 }
 
+@Composable
+fun RecipeDetail(imageResId: Int, title: String, description: String) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        // Mostrar la imagen
+        Image(
+            painter = painterResource(id = imageResId),
+            contentDescription = null,
+            modifier = Modifier
+                .height(250.dp)
+                .fillMaxWidth()
+                .clip(MaterialTheme.shapes.medium)
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Mostrar el título de la receta
+        Text(
+            text = title,
+            style = MaterialTheme.typography.titleLarge.copy(
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+            ),
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+
+        // Mostrar la descripción completa de la receta
+        Text(
+            text = description,
+            style = MaterialTheme.typography.bodyLarge.copy(color = Color.DarkGray),
+            textAlign = TextAlign.Justify,
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewRecipeDetail() {
+    LaboratorioNo6Theme {
+        RecipeDetail(
+            imageResId = R.drawable.imagen1,
+            title = "Ensalada de atún",
+            description = "Descripción detallada de la ensalada de atún. Esta ensalada contiene atún fresco, vegetales variados y una deliciosa mezcla de aderezos..."
+        )
+    }
+}
+
+
 // Vista previa de la aplicación
 @Preview(showBackground = true)
 @Composable
@@ -233,3 +286,4 @@ fun DefaultPreview() {
         }
     }
 }
+

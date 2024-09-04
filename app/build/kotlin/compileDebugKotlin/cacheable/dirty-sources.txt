@@ -1,0 +1,4 @@
+C:\Users\LENOVO\OneDrive\Documentos\UVG\PPM\Lab6\Laboratorio-No.-6\app\src\main\java\com\ordonez\laboratorio\MainActivity.kt
+C:\Users\LENOVO\OneDrive\Documentos\UVG\PPM\Lab6\Laboratorio-No.-6\app\src\main\java\com\ordonez\laboratorio\ui\theme\Type.kt
+C:\Users\LENOVO\OneDrive\Documentos\UVG\PPM\Lab6\Laboratorio-No.-6\app\src\main\java\com\ordonez\laboratorio\ui\theme\Theme.kt
+C:\Users\LENOVO\OneDrive\Documentos\UVG\PPM\Lab6\Laboratorio-No.-6\app\src\main\java\com\ordonez\laboratorio\ui\theme\Color.kt
