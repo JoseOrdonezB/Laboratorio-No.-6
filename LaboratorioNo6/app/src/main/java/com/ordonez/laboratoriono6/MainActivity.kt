@@ -218,22 +218,22 @@ fun InformationBox(title: String, description: String) {
 }
 
 @Composable
-fun RecipeDetail(imageResId: Int, title: String, description: String) {
+fun RecipeDetail(imageResId: Int, title: String, description: String, title2: String, ingredients: String, title3: String, preparation: String) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .padding(8.dp)
     ) {
         // Mostrar la imagen
         Image(
             painter = painterResource(id = imageResId),
             contentDescription = null,
             modifier = Modifier
-                .height(250.dp)
+                .height(100.dp)
                 .fillMaxWidth()
                 .clip(MaterialTheme.shapes.medium)
         )
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(12.dp))
 
         // Mostrar el título de la receta
         Text(
@@ -254,17 +254,204 @@ fun RecipeDetail(imageResId: Int, title: String, description: String) {
             textAlign = TextAlign.Justify,
             modifier = Modifier.fillMaxWidth()
         )
+        Spacer(modifier = Modifier.height(12.dp))
+
+        // Mostrar el título "Ingredientes"
+        Text(
+            text = title2,
+            style = MaterialTheme.typography.titleLarge.copy(
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+            ),
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+
+        // Mostrar la lista de ingredientes
+        Text(
+            text = ingredients,
+            style = MaterialTheme.typography.bodyLarge.copy(color = Color.DarkGray),
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = TextAlign.Justify
+                )
+        Spacer(modifier = Modifier.height(12.dp))
+
+        // Mostrar el título de Pasos de preparación
+        Text(
+            text = title3,
+            style = MaterialTheme.typography.titleLarge.copy(
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+            ),
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+
+        // Mostrar los pasos de preparación
+        Text(
+            text = preparation,
+            style = MaterialTheme.typography.bodyLarge.copy(color = Color.DarkGray),
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = TextAlign.Justify
+        )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewRecipeDetail() {
+fun PreviewRecipeDetail6() {
+    LaboratorioNo6Theme {
+        RecipeDetail(
+            imageResId = R.drawable.imagen6,
+            title = "Pastel de Arroz con Leche",
+            description = "Este pastel es una reinvención del tradicional postre de arroz con leche, convertido en una rica y cremosa delicia horneada.",
+            title2 = "Ingredientes",
+            ingredients = "1. 1 taza de arroz blanco\n" +
+                    "2. 4 tazas de leche entera\n" +
+                    "3. 1 taza de azúcar\n" +
+                    "4. 1 rama de canela\n" +
+                    "5. 1 cucharadita de vainilla\n" +
+                    "6. 1 taza de crema para batir\n" +
+                    "7. 1/2 taza de leche condensada\n" +
+                    "8. 3 huevos\n" +
+                    "9. 1 cucharadita de canela en polvo",
+            title3 = "Pasos de preparación",
+            preparation = "1. Enjuaga el arroz bajo agua fría. En una olla grande, mezcla el arroz, 4 tazas de leche, la rama de canela y una pizca de sal. Cocina a fuego medio, removiendo ocasionalmente, hasta que el arroz esté tierno y haya absorbido la mayor parte de la leche, unos 20-25 minutos.\n" +
+                    "2. En un tazón grande, bate los huevos junto con la crema para batir, la leche condensada y la canela en polvo. Incorpora el arroz con leche frío a esta mezcla.\n" +
+                    "3. Vierte la mezcla en el molde preparado y hornea durante 40-50 minutos."
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewRecipeDetail5() {
+    LaboratorioNo6Theme {
+        RecipeDetail(
+            imageResId = R.drawable.imagen5,
+            title = "Tacos de Carne Asada con Salsa de Piña",
+            description = "Se combina el sabor jugoso de la carne a la parrilla con el dulzor tropical y fresco de la piña.",
+            title2 = "Ingredientes",
+            ingredients = "1. 500 g de carne asada (arrachera, bistec o falda)\n" +
+                    "2. 12 tortillas de maíz (o de harina)\n" +
+                    "3. 1 cucharada de aceite vegetal\n" +
+                    "4. 1 taza de piña fresca, cortada en cubitos\n" +
+                    "5. 1/4 de cebolla morada, picada finamente",
+            title3 = "Pasos de preparación",
+            preparation = "1. Sazona la carne con sal, pimienta y un poco de aceite vegetal. Déjala reposar por 10 minutos a temperatura ambiente.\n" +
+                    "2. Asa la carne durante 3-5 minutos por lado (dependiendo del grosor) hasta que esté bien cocida pero aún jugosa. Deja reposar la carne por unos minutos antes de cortarla en tiras finas o pequeños trozos.\n" +
+                    "3. Mezcla los cubos de piña con la cebolla morada.\n" +
+                    "3. Calienta las tortillas de maíz en una sartén o comal hasta que estén suaves y calientes.\n" +
+                    "4. Coloca una porción de carne asada en el centro de cada tortilla. Agrega una cucharada de la salsa de piña por encima."
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewRecipeDetail4() {
+    LaboratorioNo6Theme {
+        RecipeDetail(
+            imageResId = R.drawable.imagen4,
+            title = "Alitas al pastor",
+            description = "Alitas de pollo marinadas en una salsa de chiles y especias inspirada en el clásico taco al pastor.",
+            title2 = "Ingredientes",
+            ingredients = "1. 1 kg de alitas de pollo\n" +
+                    "2. 2 chiles guajillo, desvenados y sin semillas\n" +
+                    "3. 1 chile chipotle en adobo\n" +
+                    "4. 2 dientes de ajo\n" +
+                    "5. 1/4 de cebolla\n" +
+                    "6. 2 cucharadas de vinagre blanco\n" +
+                    "7. 1 cucharadita de orégano\n" +
+                    "8. 2 cucharadas de achiote",
+            title3 = "Pasos de preparación",
+            preparation = "1. En una olla pequeña, hierve agua y agrega los chiles guajillo y ancho. Cocina durante 5 minutos para ablandarlos. Escúrrelos y colócalos en una licuadora junto con los demás ingredientes.\n" +
+                    "2. Coloca las alitas de pollo en un tazón grande o una bolsa con cierre hermético. Vierte la salsa sobre las alitas, asegurándote de que estén bien cubiertas. Deja marinar en el refrigerador durante al menos 2 horas.\n" +
+                    "3. Precalienta la parrilla o el horno a 200°C (390°F). Si prefieres hornearlas, colócalas en una bandeja para hornear forrada con papel aluminio y hornea por 25-30 minutos."
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewRecipeDetail3() {
+    LaboratorioNo6Theme {
+        RecipeDetail(
+            imageResId = R.drawable.imagen3,
+            title = "Sopa de Papa",
+            description = "Plato sencillo y reconfortante, con papas tiernas cocidas en un caldo cremoso y lleno de sabor.",
+            title2 = "Ingredientes",
+            ingredients = "1. 4 papas medianas, peladas y cortadas en cubos\n" +
+                    "2. 1 litro de caldo de pollo o vegetales\n" +
+                    "3. 1 cebolla, picada finamente\n" +
+                    "4. 2 dientes de ajo, picados\n" +
+                    "5. 1 taza de crema\n" +
+                    "6. 1 cucharada de mantequilla\n" +
+                    "6. Sal y pimienta al gusto",
+            title3 = "Pasos de preparación",
+            preparation = "1. En una olla grande, derrite la mantequilla a fuego medio. Añade la cebolla y el ajo, y sofríelos hasta que estén dorados y fragantes.\n" +
+                    "2. Agrega las papas y el caldo a la olla. Lleva a ebullición, luego reduce el fuego y cocina a fuego lento hasta que las papas estén tiernas, aproximadamente 20 minutos.\n" +
+                    "3. Una vez que las papas estén cocidas, retira la olla del fuego y añade la crema. Mezcla bien y sazona con sal y pimienta al gusto."
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewRecipeDetail2() {
+    LaboratorioNo6Theme {
+        RecipeDetail(
+            imageResId = R.drawable.imagen2,
+            title = "Caldo Tlalpeño",
+            description = "Sopa tradicional mexicana, reconfortante y picante, hecha con pollo, garbanzos y verduras.",
+            title2 = "Ingredientes",
+            ingredients = "1. 2 pechugas de pollo deshuesadas y cocidas\n" +
+                    "2. 1 taza de garbanzos cocidos\n" +
+                    "3. 2 zanahorias, cortadas en tiras\n" +
+                    "4. 2 calabacitas, cortadas en tiras\n" +
+                    "5. 1 cebolla picada\n" +
+                    "6. 2 dientes de ajo picados\n" +
+                    "7. 2 chiles chipotles en adobo\n" +
+                    "8. 6 tazas de caldo de pollo\n" +
+                    "9. Jugo de 2 limones\n" +
+                    "10. Aguacate y queso fresco para servir",
+            title3 = "Pasos de preparación",
+            preparation = "1. En una olla grande, sofríe la cebolla y el ajo hasta que estén dorados. Agrega las zanahorias, las calabacitas y los chiles chipotles.\n" +
+                    "2. Vierte el caldo de pollo en la olla y añade las pechugas cocidas y desmenuzadas junto con los garbanzos. Cocina a fuego lento durante 20 minutos.\n" +
+                    "3. Retira del fuego y exprime el jugo de los limones en el caldo.\n" +
+                    "4. Sirve caliente con rodajas de aguacate, queso fresco y más limón al gusto. ¡Disfruta!"
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewRecipeDetail1() {
     LaboratorioNo6Theme {
         RecipeDetail(
             imageResId = R.drawable.imagen1,
             title = "Ensalada de atún",
-            description = "Descripción detallada de la ensalada de atún. Esta ensalada contiene atún fresco, vegetales variados y una deliciosa mezcla de aderezos..."
+            description = "Esta ensalada contiene atún fresco con vegetales variados...",
+            title2 = "Ingredientes",
+            ingredients = "1. 2 latas de atún (en agua o aceite, escurridas)\n" +
+                    "2. 1/2 taza de mayonesa\n" +
+                    "3. 1 cucharada de mostaza\n" +
+                    "4. 1/4 de cebolla morada, picada finamente\n" +
+                    "5. 1 tallo de apio, picado\n" +
+                    "6. 1 zanahoria, rallada\n" +
+                    "7. 1 tomate, picado en cubos pequeños\n" +
+                    "8. 1 aguacate, en cubos (opcional)\n" +
+                    "9. Jugo de 1/2 limón\n" +
+                    "10. Sal y pimienta al gusto\n" +
+                    "11. 1/4 taza de cilantro fresco, picado (opcional)",
+            title3 = "Pasos de preparación",
+            preparation = "1. En un tazón grande, mezcla el atún escurrido con la mayonesa y la mostaza.\n" +
+                    "2. Agrega la cebolla morada, el apio, la zanahoria rallada, el tomate y el aguacate (si lo usas).\n" +
+                    "3. Exprime el jugo de limón sobre la mezcla y sazona con sal y pimienta al gusto.\n" +
+                    "4. Mezcla todos los ingredientes hasta que estén bien combinados.\n" +
+                    "5. Añade el cilantro picado para dar un toque de frescura (opcional)."
         )
     }
 }
