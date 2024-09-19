@@ -92,12 +92,12 @@ fun TopBar() {
 fun CarruselDeImagenes() {
     // Lista de imágenes y descripciones
     val imagenes = listOf(
-        Triple(R.drawable.imagen1, "Ensalada de atún", "Descripción de la ensalada de atún..."),
-        Triple(R.drawable.imagen2, "Caldo Tlalpeño", "Descripción del caldo tlalpeño..."),
-        Triple(R.drawable.imagen3, "Sopa de papa", "Descripción de la sopa de papa..."),
-        Triple(R.drawable.imagen4, "Alitas al pastor", "Descripción de las alitas al pastor..."),
-        Triple(R.drawable.imagen5, "Tacos de carne asada con salsa de piña", "Descripción de los tacos de carne asada con salsa de piña..."),
-        Triple(R.drawable.imagen6, "Pastel de arroz con leche", "Descripción del pastel de arroz con leche...")
+        Triple(R.drawable.imagen1, "Ensalada de atún", "Esta ensalada contiene atún fresco con vegetales variados..."),
+        Triple(R.drawable.imagen2, "Caldo Tlalpeño", "Sopa tradicional mexicana, reconfortante y picante, hecha con pollo, garbanzos y verduras."),
+        Triple(R.drawable.imagen3, "Sopa de papa", "Plato sencillo y reconfortante, con papas tiernas cocidas en un caldo cremoso y lleno de sabor."),
+        Triple(R.drawable.imagen4, "Alitas al pastor", "Alitas de pollo marinadas en una salsa de chiles y especias inspirada en el clásico taco al pastor."),
+        Triple(R.drawable.imagen5, "Tacos de carne asada con salsa de piña", "Se combina el sabor jugoso de la carne a la parrilla con el dulzor tropical y fresco de la piña."),
+        Triple(R.drawable.imagen6, "Pastel de arroz con leche", "Este pastel es una reinvención del tradicional postre de arroz con leche, convertido en una rica y cremosa delicia horneada.")
     )
 
     // Extender la lista de imágenes para crear un carrusel continuo
